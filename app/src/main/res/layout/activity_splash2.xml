@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@color/AppBackGroundColor">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintRight_toRightOf="parent">
+
+    <TextView
+        android:id="@+id/Splash_Text_Woo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="우"
+        android:textSize="40dp"
+        android:fontFamily="@font/npsfont_extrabold"
+        android:textColor="@color/AppLogoColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/Splash_Text_Ri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리"
+        android:textSize="40dp"
+        android:fontFamily="@font/npsfont_extrabold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/Splash_Text_Woo"/>
+    <TextView
+        android:id="@+id/Splash_Text_Dong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동"
+        android:textSize="40dp"
+        android:fontFamily="@font/npsfont_extrabold"
+        android:textColor="@color/AppLogoColor"
+        app:layout_constraintTop_toBottomOf="@id/Splash_Text_Woo"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/Splash_Text_Nae"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="네"
+        android:textSize="40dp"
+        android:fontFamily="@font/npsfont_extrabold"
+        app:layout_constraintTop_toBottomOf="@id/Splash_Text_Ri"
+        app:layout_constraintLeft_toRightOf="@id/Splash_Text_Dong"/>
+    <TextView
+        android:id="@+id/Splash_Text_Jum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="점"
+        android:textSize="40dp"
+        android:fontFamily="@font/npsfont_extrabold"
+        android:textColor="@color/AppLogoColor"
+        app:layout_constraintTop_toBottomOf="@id/Splash_Text_Nae"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/Splash_Text_Zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="집"
+        android:textSize="40dp"
+        android:fontFamily="@font/npsfont_extrabold"
+        app:layout_constraintTop_toBottomOf="@id/Splash_Text_Nae"
+        app:layout_constraintLeft_toRightOf="@id/Splash_Text_Jum"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
