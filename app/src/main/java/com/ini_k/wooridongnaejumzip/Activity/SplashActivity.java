@@ -1,4 +1,4 @@
-package com.ini_k.wooridongnaejumzip;
+package com.ini_k.wooridongnaejumzip.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.ini_k.wooridongnaejumzip.R;
 
 import in.dd4you.animatoo.Animatoo;
 
@@ -57,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
 
     public void fadeInTextWoo(){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(500)
                 .repeat(0)
                 .onEnd(new YoYo.AnimatorCallback() {
                     @Override
@@ -70,7 +71,7 @@ public class SplashActivity extends AppCompatActivity {
 
     public void fadeInTextDong(){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(500)
                 .repeat(0)
                 .onEnd(new YoYo.AnimatorCallback() {
                     @Override
@@ -82,7 +83,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     public void fadeInTextJum(){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(500)
                 .repeat(0)
                 .onEnd(new YoYo.AnimatorCallback() {
                     @Override
@@ -94,7 +95,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     public void fadeInTextRi(){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(500)
                 .repeat(0)
                 .onEnd(new YoYo.AnimatorCallback() {
                     @Override
@@ -106,7 +107,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     public void fadeInTextNae(){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(500)
                 .repeat(0)
                 .onEnd(new YoYo.AnimatorCallback() {
                     @Override
@@ -118,7 +119,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     public void fadeInTextZip(){
         YoYo.with(Techniques.FadeIn)
-                .duration(1000)
+                .duration(500)
                 .onEnd(new YoYo.AnimatorCallback() {
                     @Override
                     public void call(Animator animator) {
@@ -129,7 +130,8 @@ public class SplashActivity extends AppCompatActivity {
                 .playOn(textZip);
     }
     public void moveToMainActivity(){
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
         Animatoo.animateFade(SplashActivity.this);
+//        Animatoo.animateFade(getApplicationContext());
     }
 }

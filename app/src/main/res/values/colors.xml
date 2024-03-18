@@ -10,4 +10,6 @@
     <color name="AppBackGroundColor">#FEECE2</color>
     <color name="AppLogoColor">#FF6623</color>
     <color name="AppTextColor">#454545</color>
+    <color name="AppIconColor">#9BB0C1</color>
+
 </resources>

@@ -4,16 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/AppBackGroundColor">
+    tools:context=".Activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/main_layout"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--        <ImageView-->
+        <!--            android:id="@+id/hamberIcon"-->
+        <!--            android:layout_width="50dp"-->
+        <!--            android:layout_height="70dp"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:src="@drawable/ic_ham_foreground"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent">-->
+        <!--        </ImageView>-->
+
+        <ImageView
+            android:id="@+id/mainLogo"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:src="@drawable/mainlogo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--           app:layout_constraintLeft_toRightOf="@id/hamberIcon"-->
+            <!--            app:layout_constraintRight_toLeftOf="@id/userIcon"-->
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/userIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_user_foreground"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/AppBackGroundColor"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@id/mainTitleBar">
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" -->
+    </FrameLayout>
+
+
+    <com.yh.bottomnavigationex.BottomNavigationViewEx
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메인 액티비티"
+        android:layout_alignParentBottom="true"
+        android:background="@color/AppLogoColor"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
