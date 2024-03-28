@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dosaCallDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_round"
+    app:backgroundTint="@android:color/transparent"
+    app:backgroundTintMode="add"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dosaCallDialogTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/fontinfo"
+        android:text="상담하기"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/dosaCallDialogLinear1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/dosaCallDialogLinear1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dosaCallDialogTextView">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/dosaImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_user_foreground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dosaCallDialogName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fontinfo"
+                android:gravity="center"
+                android:text="랜덤이름"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/dosaCallDialogLinear1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상담비 결제 방식을 선택해주세요" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dosaCallDialogFreeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_round2"
+            android:fontFamily="@font/fontinfo"
+            android:text="무료 상담하기" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dosaCallDialogPaidBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/fontinfo"
+            android:text="후불 상담하기" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="30초당 @@@@@원 후불상담은 부가세 별도입니다."
+            android:textSize="8dp" />
+
+        <FrameLayout
+            android:id="@+id/exitDosaCallDialog"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/fontinfo"
+                android:clickable="false"
+                android:text="닫기"
+                android:textSize="13dp" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

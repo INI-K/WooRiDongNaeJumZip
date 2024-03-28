@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        app:tabTextColor="@color/black"
+        app:tabTextColor="#9BCDD2"
         app:tabIndicatorColor="@color/black"
         app:tabTextAppearance="@style/tab_text"
         app:layout_constraintTop_toTopOf="parent"

@@ -1,15 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/AppBackGroundColor"
     tools:context=".Fragmant.CallFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/black"
-        android:text="전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사전화 점사" />
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/callFragmentViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true"
+                app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+            </com.smarteist.autoimageslider.SliderView>
+
+            <View
+                android:id="@+id/tempLine1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="#FFBE98"
+                app:layout_constraintTop_toBottomOf="@+id/callFragmentViewPager"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/iconlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/AppBackGroundColor"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tempLine1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tempIconSet1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:layout_margin="20dp">
+                    <ImageView
+                        android:id="@+id/image_Temp1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/text_Temp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="운세상담"
+                        android:textSize="12sp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/fontinfo"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp1"/>
+                    <ImageView
+                        android:id="@+id/image_Temp2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/image_Temp1"
+                        app:layout_constraintRight_toLeftOf="@id/image_Temp3"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/text_Temp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="타로상담"
+                        android:textSize="12sp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/fontinfo"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp2"
+                        app:layout_constraintRight_toLeftOf="@id/text_Temp3"
+                        app:layout_constraintLeft_toRightOf="@id/text_Temp1"/>
+                    <ImageView
+                        android:id="@+id/image_Temp3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/image_Temp2"
+                        app:layout_constraintRight_toLeftOf="@id/image_Temp4"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/text_Temp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="신점상담"
+                        android:layout_marginStart="20dp"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/fontinfo"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp3"
+                        app:layout_constraintRight_toLeftOf="@id/text_Temp4"
+                        app:layout_constraintLeft_toRightOf="@id/text_Temp2"/>
+
+                    <ImageView
+                        android:id="@+id/image_Temp4"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/image_Temp3"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/text_Temp4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="타로상담"
+                        android:textSize="12sp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/fontinfo"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp4"
+                        app:layout_constraintLeft_toRightOf="@id/text_Temp3"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/tempIconSet1">
+
+                    <ImageView
+                        android:id="@+id/image_Temp5"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginStart="20dp"/>
+
+                    <TextView
+                        android:id="@+id/text_Temp5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="고민상담"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/fontinfo"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp5"/>
+
+                    <ImageView
+                        android:id="@+id/image_Temp6"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintLeft_toRightOf="@id/image_Temp5"
+                        app:layout_constraintRight_toLeftOf="@id/image_Temp7"/>
+                    <TextView
+                        android:id="@+id/text_Temp6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="무료상담"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/fontinfo"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp6"
+                        app:layout_constraintLeft_toRightOf="@+id/text_Temp5"
+                        app:layout_constraintRight_toLeftOf="@id/text_Temp7"/>
+
+                    <ImageView
+                        android:id="@+id/image_Temp7"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/image_Temp6"
+                        app:layout_constraintRight_toLeftOf="@id/image_Temp8" />
+                    <TextView
+                        android:id="@+id/text_Temp7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이용안내"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/fontinfo"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintLeft_toRightOf="@id/text_Temp6"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp7"
+                        app:layout_constraintRight_toLeftOf="@id/text_Temp8"/>
+
+                    <ImageView
+                        android:id="@+id/image_Temp8"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/smile_imoji_temp"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintLeft_toRightOf="@id/image_Temp7"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/text_Temp8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="상담안내"
+                        android:textSize="12sp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/fontinfo"
+                        app:layout_constraintTop_toBottomOf="@id/image_Temp8"
+                        app:layout_constraintLeft_toRightOf="@+id/text_Temp7"
+                        app:layout_constraintRight_toRightOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/tempLine2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="#FFBE98"
+                app:layout_constraintTop_toBottomOf="@+id/iconlist" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tempLine2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+                <LinearLayout
+                    android:id="@+id/linearTemp1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
+                    <TextView
+                        android:id="@+id/callFragmenUserId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="홍길동"
+                        android:fontFamily="@font/fontinfo"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 님을 위한 추천 상담사"
+                        android:fontFamily="@font/fontinfo"
+                        android:textSize="15dp"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recommendDosaRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/linearTemp1">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <LinearLayout
+                    android:id="@+id/linearTemp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/recommendDosaRecyclerView"
+                    app:layout_constraintLeft_toLeftOf="parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="금액 부담 없는"
+                        android:fontFamily="@font/fontinfo"
+                        android:textSize="15dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 할인상담!"
+                        android:fontFamily="@font/fontinfo"
+                        android:textStyle="bold"
+                        android:textSize="20dp"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/discountDosaRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/linearTemp2">
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

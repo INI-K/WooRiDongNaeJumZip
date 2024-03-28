@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity"
+    android:background="@color/AppBackGroundColor">
+
+    <ImageView
+        android:id="@+id/LoginActivityLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo">
+    </ImageView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/LoginActivityLinearView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/LoginActivityLogo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/loginBtn">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontinfo"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:text="아이디">
+        </TextView>
+        <EditText
+            android:id="@+id/LoginActivityEditTextView_ID"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="text"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontinfo"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:text="비밀번호">
+        </TextView>
+        <EditText
+            android:id="@+id/LoginActivityEditTextView_Password"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="textPassword"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.victor.loading.rotate.RotateLoading
+        android:id="@+id/rotateloading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:loading_width="5dp"
+        app:loading_color="@color/AppIconColor"
+        android:layout_centerInParent="true"
+        app:layout_constraintTop_toBottomOf="@id/LoginActivityLinearView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="318dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:background="@color/AppLogoColor"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rotateloading"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

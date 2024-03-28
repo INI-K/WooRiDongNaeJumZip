@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "910614301492",
+    "firebase_url": "https://woodongjum-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "woodongjum",
+    "storage_bucket": "woodongjum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910614301492:android:537ae6ff7cd509295df361",
+        "android_client_info": {
+          "package_name": "com.ini_k.wooridongnaejumzip"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-H03UBmxWNXNPw2ntpVc8avewEly5p1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

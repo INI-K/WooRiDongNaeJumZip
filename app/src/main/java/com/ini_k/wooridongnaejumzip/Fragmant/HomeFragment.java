@@ -17,17 +17,20 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.ini_k.wooridongnaejumzip.Adapter.HomePagerAdapter;
+import com.ini_k.wooridongnaejumzip.Model.Noti;
 import com.ini_k.wooridongnaejumzip.R;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
     View view;
 
     String TAG =" HomeFragment";
-
+    Bundle bundle;
     private ViewGroup viewGroup;
-
     PagerSlidingTabStrip tabs;
+    ArrayList<Noti> notiArrayList;
     public HomeFragment() {
     }
 
@@ -43,11 +46,25 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable("NotiArray",notiArrayList);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+        if (savedInstanceState != null && savedInstanceState.get("data") != null){
+            notiArrayList = (ArrayList<Noti>) savedInstanceState.getSerializable("NotiArray");
+            setVariable();
+            setInit();
+        }else {
+            bundle = getArguments();
+            setVariable();
+            setInit();
+        }
 
-        setInit();
 
 
 
@@ -58,8 +75,9 @@ public class HomeFragment extends Fragment {
         /* setup infinity scroll viewpager */
 
         ViewPager2 viewPageSetUp = viewGroup.findViewById(R.id.pager); //여기서 뷰페이저를 참조한다.
-        HomePagerAdapter SetupPagerAdapter = new HomePagerAdapter(getActivity()); //프래그먼트에서는 getActivity로 참조하고, 액티비티에서는 this를 사용해주세요.
+        HomePagerAdapter SetupPagerAdapter = new HomePagerAdapter(getActivity(),notiArrayList); //프래그먼트에서는 getActivity로 참조하고, 액티비티에서는 this를 사용해주세요.
         viewPageSetUp.setAdapter(SetupPagerAdapter); //FragPagerAdapter를 파라머티로 받고 ViewPager2에 전달 받는다.
+        viewPageSetUp.setOffscreenPageLimit(3);
         // 무제한 스크롤 처럼 보이기 위해서는 0페이지 부터가 아니라 1000페이지 부터 시작해서 좌측으로 이동할 경우 999페이지로 이동하여 무제한 처럼 스크롤 되는 것 처럼 표현하기 위함.
 //        viewPageSetUp.setCurrentItem(1000);
 
@@ -104,6 +122,7 @@ public class HomeFragment extends Fragment {
                 tabLayout, viewPageSetUp, (tab, position) -> {
             tab.setText(getFragmentName(position));
 
+
         });
         tabLayoutMediator.attach();
 
@@ -120,4 +139,7 @@ public class HomeFragment extends Fragment {
         return "";
     }
 
+    public void setVariable(){
+        notiArrayList = (ArrayList<Noti>) bundle.getSerializable("NotiArray");
+    }
 }

@@ -15,6 +15,7 @@ import com.ini_k.wooridongnaejumzip.Fragmant.HomeFragment;
 import com.ini_k.wooridongnaejumzip.HomeFragmentPager.HomPagerEventFragment;
 import com.ini_k.wooridongnaejumzip.HomeFragmentPager.HomePagerCumunityFragment;
 import com.ini_k.wooridongnaejumzip.HomeFragmentPager.HomePagerNoticeFragment;
+import com.ini_k.wooridongnaejumzip.Model.Noti;
 import com.ini_k.wooridongnaejumzip.R;
 
 import java.util.ArrayList;
@@ -25,12 +26,13 @@ public class HomePagerAdapter extends FragmentStateAdapter {
     private HomePagerNoticeFragment fragment1;
     private HomePagerCumunityFragment fragment2;
     private HomPagerEventFragment fragment3;
+    public ArrayList<Noti> notiArrayList;
 
     private final int mSetItemCount = 3;
 
-    public HomePagerAdapter(FragmentActivity fragmentActivity) {
-
+    public HomePagerAdapter(FragmentActivity fragmentActivity , ArrayList<Noti> notiArrayList) {
         super(fragmentActivity);
+        this.notiArrayList = notiArrayList;
 
     }
 
@@ -40,7 +42,7 @@ public class HomePagerAdapter extends FragmentStateAdapter {
         int iViewIdx = getRealPosition(position);
         switch (iViewIdx) {
             case 0: {
-                return new HomePagerNoticeFragment();
+                return new HomePagerNoticeFragment(notiArrayList);
             } //프래그먼트 순서에 맞게 넣어주세요.
             case 1: {
                 return new HomePagerCumunityFragment();
@@ -52,7 +54,7 @@ public class HomePagerAdapter extends FragmentStateAdapter {
 //            case 4    : { return new Frag5(); }
 //            case 5    : { return new Frag6(); }
             default: {
-                return new HomePagerNoticeFragment();
+                return new HomePagerNoticeFragment(notiArrayList);
             } //기본으로 나와있는 프래그먼트
         }
 
